@@ -12,14 +12,35 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "L'application souhaite accéder à vos photos pour mettre à jour votre photo de profil.",
+          "cameraPermission": "L'application souhaite accéder à votre caméra pour prendre une photo de profil."
+        }
+      ]
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "L'application souhaite accéder à vos photos pour mettre à jour votre photo de profil.",
+        "NSCameraUsageDescription": "L'application souhaite accéder à votre caméra pour prendre une photo de profil."
+      },
+      "bundleIdentifier": "com.anonymous.nuitetoiles"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.nuitetoiles"
     },
     "web": {
       "favicon": "./assets/favicon.png"
